@@ -28,5 +28,7 @@ namespace DiShop.Models
         public decimal Height { get; set; }
 
         public decimal Crew { get; set; }
+
+        public Guid ArmorId { get; set; }
     }
 }

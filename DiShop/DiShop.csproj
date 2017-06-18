@@ -198,10 +198,15 @@
     <Compile Include="Migrations\201706181149210_Vehicle.Designer.cs">
       <DependentUpon>201706181149210_Vehicle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706181309197_VehicleWithArmor.cs" />
+    <Compile Include="Migrations\201706181309197_VehicleWithArmor.Designer.cs">
+      <DependentUpon>201706181309197_VehicleWithArmor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\DiShopDbContext.cs" />
+    <Compile Include="Models\DiShopDbInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -287,6 +292,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706181149210_Vehicle.resx">
       <DependentUpon>201706181149210_Vehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706181309197_VehicleWithArmor.resx">
+      <DependentUpon>201706181309197_VehicleWithArmor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

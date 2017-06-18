@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/2017.06.18_19.46_db_backup
+/DiShop/Models/DiShopDbInitializer.cs
+/DiShop/Migrations/201706181309197_VehicleWithArmor.cs
+/DiShop/Migrations/201706181309197_VehicleWithArmor.Designer.cs
+/DiShop/Migrations/201706181309197_VehicleWithArmor.resx
