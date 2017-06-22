@@ -30,5 +30,7 @@ namespace DiShop.Models
         public decimal Crew { get; set; }
 
         public Guid ArmorId { get; set; }
+
+        public decimal BuyCount { get; set; }
     }
 }

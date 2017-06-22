@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201706181309197_VehicleWithArmor.Designer.cs">
       <DependentUpon>201706181309197_VehicleWithArmor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706222256043_BuyCount.cs" />
+    <Compile Include="Migrations\201706222256043_BuyCount.Designer.cs">
+      <DependentUpon>201706222256043_BuyCount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Armor.cs" />
@@ -301,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706181309197_VehicleWithArmor.resx">
       <DependentUpon>201706181309197_VehicleWithArmor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706222256043_BuyCount.resx">
+      <DependentUpon>201706222256043_BuyCount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
