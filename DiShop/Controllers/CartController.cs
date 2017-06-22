@@ -10,17 +10,17 @@ using DiShop.Models;
 
 namespace DiShop.Controllers
 {
-    public class VehiclesController : Controller
+    public class CartController : Controller
     {
         private DiShopDbContext db = new DiShopDbContext();
 
-        // GET: Vehicles
+        // GET: Cart
         public ActionResult Index()
         {
             return View(db.Vehicles.ToList());
         }
 
-        // GET: Vehicles/Details/5
+        // GET: Cart/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -35,18 +35,18 @@ namespace DiShop.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Create
+        // GET: Cart/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Vehicles/Create
+        // POST: Cart/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,YearOfDesigned,Cost,Weight,Length,Width,Height,Crew,ArmorId")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "Id,Name,YearOfDesigned,Cost,Weight,Length,Width,Height,Crew,ArmorId,BuyCount")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace DiShop.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Edit/5
+        // GET: Cart/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -74,12 +74,12 @@ namespace DiShop.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Edit/5
+        // POST: Cart/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,YearOfDesigned,Cost,Weight,Length,Width,Height,Crew,ArmorId")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "Id,Name,YearOfDesigned,Cost,Weight,Length,Width,Height,Crew,ArmorId,BuyCount")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace DiShop.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Delete/5
+        // GET: Cart/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace DiShop.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Delete/5
+        // POST: Cart/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
@@ -116,6 +116,23 @@ namespace DiShop.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Remove(Guid id)
+        {
+            Vehicle vehicle = db.Vehicles.Find(id);
+            if (vehicle != null) vehicle.BuyCount--;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult RemoveAll(Guid id)
+        {
+            Vehicle vehicle = db.Vehicles.Find(id);
+            if (vehicle != null) vehicle.BuyCount = 0;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -123,14 +140,6 @@ namespace DiShop.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult Buy(Guid id)
-        {
-            Vehicle vehicle = db.Vehicles.Find(id);
-            if (vehicle != null) vehicle.BuyCount++;
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
     }
 }
