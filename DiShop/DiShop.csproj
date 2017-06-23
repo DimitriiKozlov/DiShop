@@ -222,6 +222,11 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\AAV.jpg" />
+    <Content Include="Content\img\Abrams.jpg" />
+    <Content Include="Content\img\Bradley.jpg" />
+    <Content Include="Content\img\Lav.JPG" />
+    <Content Include="Content\img\Stryker.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
