@@ -15,32 +15,32 @@
                 @Html.Raw($"<img src=\"../../Content/img/{item.Name}.jpg\" alt=\"Image\" width=\"320\" height=\"240\"/>")
             </td>
             @*<td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.YearOfDesigned)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Length)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Width)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Height)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Crew)
-                </td>
-                <td>
-                    @Html.ActionLink("Buy", "Buy", new { id=item.Id })
-                </td>*@
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.YearOfDesigned)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Weight)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Length)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Width)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Height)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Crew)
+    </td>*@
+    <td>
+        @Html.ActionLink("Create", "Create", new { id=item.Id })
+    </td>
 
             <td>
                 <h2>@Html.DisplayFor(modelItem => item.Name)</h2>

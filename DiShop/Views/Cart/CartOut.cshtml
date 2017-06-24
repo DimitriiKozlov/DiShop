@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+@model IEnumerable<DiShop.Models.ApplicationUser>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cart out</title>
+</head>
+<body>
+    <div>
+        <dl>
+            <dt>Name</dt>
+            <dd>@Model.First().UserName</dd>
+        </dl>
+    </div>
+</body>
+</html>
